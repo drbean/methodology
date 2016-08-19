@@ -1,0 +1,146 @@
+# This is a sample Vroom input file. It should help you get started.
+#
+# Edit this file with your content. Then run `vroom --vroom` to start
+# the show!
+#
+# See `perldoc Vroom::Vroom` for complete details.
+#
+---- config
+# Basic config options.
+title: Cclass!
+indent: 5
+height: 18
+width: 69
+skip: 0
+
+# The following options are for Gvim usage.
+# vim: gvim
+# fuopt: maxhorz,maxvert
+# guioptions: egmLtT
+# guicursor: a:blinkon0-ver25-Cursor
+# guifont: Bitstream_Vera_Sans_Mono:h18
+
+---- center
+Comprehension Competition
+
+by Dr Bean
+
+(hint: press the spacebar or Backspace)
+
+----
+== Ways of working
+
+There are 2 ways of working in the class
+
+* 3 or 4 people in a group cooperating to share information
+
+and 
+
++* 2 groups competing to ask and answer each other's questions
+
+----
+== Classwork
+
+Each week we will:
+
+* co-operate in a group of 3 or 4 to share information
+* compete with another group to ask each other questions
+
+----
+== Grades
+
+* Classwork. Each week your group get points:
+  * 0, if absent
+  * 2, if your group loses
+  * 3, if your group wins
+
++* Homework. Each week listen to a sound file and fill in the missing words for 2 points.
+  * http://web.nuu.edu.tw/~greg/2L1.html
+  * http://web.nuu.edu.tw/~greg/MB1.html
+  * http://web.nuu.edu.tw/~greg/3K0.html
+  * drbean@freeshell.org
+
++* Exams.
+  * Week 4, 9, 13, 18
+    * a 3-partner jigsaw activity with your group
+    * 1 or 2 2-partner discussions
+    * For a total of 5 points
+
+----
+== Grade computation
+* Classwork: 30/40 percent
+* Homework: 30/40 percent
+* Exams: 10/20 percent
+
+----
+== Make-up
+* Classwork: No make-up for any reason.
+	Don't get sick. Don't drive a motorcycle.
+* Homework: No make-up. Do it in hospital.
+* Exams: No make-up. BE here in Week 4, 13.
+
+----
+== Homework is very important
+
+Grades last semester in 聯合大學
+
+The homework was very important.
+
+http://web.nuu.edu.tw/~greg/MIA0009.txt
+http://web.nuu.edu.tw/~greg/FIA0046.txt
+
+----
+== Textbook
+	
+	* Market Leader. Longman
+	* English Conversation in Taiwan by Yeldham, Crane
+
+	* No need to get textbook
+
+	* BUT you MUST have notebook
+
+----
+== Groups
+
+Orange		Black
+Pink		Blue
+Purple		Brown
+Red		Gray
+White		Green
+Yellow		BlackBlack
+OrangeOrange	GreenGreen
+
+----
+== Classwork grade decisions
+
+Who should decide the classwork grades?
+
+- the teacher: 
+  This way
+- the students:
+  One table of 2 groups decides which group gets
+  3 which group gets 2.
+
+----
+== Dr Bean's reasons
+
+- The students should be active. Teacher grading makes students
+  passive.
+- Students need to set goals. Deciding/saying why some other
+  person did an excellent job gives students a goal for themselves.
+
+----
+== But, students resist self-assessment
+
+---- include names.vroom
+
+---- include questions.vroom
+
+---- include conversation.vroom
+
+---- include drbean.vroom
+
+---- include comp.vroom
+
+----
+== The End

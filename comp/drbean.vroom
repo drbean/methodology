@@ -1,0 +1,336 @@
+# This is a sample Vroom input file. It should help you get started.
+#
+# Edit this file with your content. Then run `vroom --vroom` to start
+# the show!
+#
+# See `perldoc Vroom::Vroom` for complete details.
+#
+---- config
+# Basic config options.
+title: Asking Dr Bean questions! What was the question?
+indent: 5
+height: 18
+width: 40
+skip: 0
+
+# The following options are for Gvim usage.
+# vim: gvim
+# fuopt: maxhorz,maxvert
+# guioptions: egmLtT
+# guicursor: a:blinkon0-ver25-Cursor
+# guifont: Bitstream_Vera_Sans_Mono:h18
+
+---- center
+Asking Dr Bean questions! What was the question?
+
+by Dr Bean
+
+----
+== Asking questions
+
+Ask Dr Bean questions!!
+
+Who is he?
+What is he doing?
+Where is he going?
+
+Think of more WH words you can use to ask
+Dr Bean questions.
+
+----
+What was the question?
+
+YN Question
+
+Q: ?????
+A: Yes
+
+What was the question?
++ Is your name X?
++ Are you from X?
++ Do you like to do X in your spare time?
+
++ WH Question
+
+Q: ?????
+A: X
+
+What was the question?
++ What is your name?
++ Where are you from?
++ What do you like to do in your spare time?
+
+----
+We think Dr Bean's name is 'Greg X.' Let's ask him about his name.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Is your name Greg X?
+
++ As a WH Question:
+
+The answer is 'Greg X.'
+The question was:
++ What is your name?
+
+----
+We think Dr Bean is from 'X'. Let's ask him where he's from.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Are you from X?
+
++ As a WH Question:
+
+The answer is 'X.'
+The question was:
++ Where are you from?
+
+----
+We think Dr Bean comes from X. Let's ask him where he comes from.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Do you come from X?
+
++ As a WH Question:
+
+The answer is 'X.'
+The question was:
++ Where do you come from?
+
+----
+We think Dr Bean has been n years/months/weeks/days in Taiwan. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Have you been n years/months/weeks/days in Taiwan?
+
++ As a WH Question:
+
+The answer is 'n.'
+The question was:
++ How long/how many years have you been in Taiwan?
+
+----
+We think Dr Bean lives in '勝利里' in Miaoli. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Do you live in '勝利里' in Miaoli?
+
++ As a WH Question:
+
+The answer is 'X.'
+The question was:
++ Where (in Miaoli) do you live?
+
+----
+We think Dr Bean's family is in X. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Is your family in X?
+
++ As a WH Question:
+
+The answer is 'X.'
+WH Question:
++ Where is your family?
+
+----
+We think Dr Bean goes back to Y every X years. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+Yes/No Question:
++ Do you go back to Y every X years?
+
++ As a WH Question:
+
+The answer is 'X.'
+The question was:
++ How often do you go back to Y?
+
+----
+We think Dr Bean came to Taiwan in 200n. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Did you come to Taiwan in 200n?
+
++ As a WH Question:
+
+The answer is 'X.'
+The question was:
++ When did you come to Taiwan?
+
+----
+We think Dr Bean came to Taiwan to do X. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Did you come to Taiwan to do X?
+
++ As a WH Question:
+
+The answer is 'X.'
+The question was:
++ Why did you come to Taiwan?
+
+----
+We think Dr Bean is n cm tall. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Are you n cm tall?
+
++ As a WH Question:
+
+The answer is 'n cm.'
+The question was:
++ How tall are you?
+
+----
+We think Dr Bean is n years old. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Are you n years old?
+
++ As a WH Question:
+
+The answer is 'n.'
+The question was:
++ How old are you?
+
+----
+We think Dr Bean admires someone called 
+Andy Gibbons. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Do you admire Andy Gibbons?
+
++ As a WH Question:
+
+The answer is 'Andy Gibbons.'
+The question was:
++ Who do you admire?
+
+----
+We think X admires Dr Bean. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Does X admire you?
+
++ As a WH Question:
+
+The answer is 'X.'
+The question was:
++ Who admires you?
+
+----
+We think Dr Bean might/will leave Taiwan in 201n. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Might/will you leave Taiwan in 201n?
+
++ As a WH Question:
+
+The answer is '201n.'
+The question was:
++ When will you leave Taiwan?
+
+----
+We think Dr Bean plans to stay in Taiwan for n years/until 201n Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Do you plan to stay in Taiwan for n years/until 201n?
+
++ As a WH Question:
+
+The answer is 'X.'
+The question was:
++ How long do you plan to stay in Taiwan?
+
+----
+We think Dr Bean can speak n languages. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Can you speak n languages?
+
++ As a WH Question:
+
+The answer is 'n.'
+The question was:
++ How many languages can you speak?
+
+----
+We think Dr Bean will spend the Chinese New Year in Japan. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Will you spend the Chinese New Year in Japan?
+
++ As a WH Question:
+
+The answer is 'Japan.'
+The question was:
++ Where will you spend the Chinese New Year?
+
+----
+We think Dr Bean is called 高來圭. Let's ask him.
+
+As a Yes/No Question:
+
+The answer is 'Yes'.
+The question was:
++ Are you called 高來圭?
+
++ As a WH Question:
+
+The answer is '高來圭.'
+The question was:
++ What are you called?
+
+
+----
+== The End
