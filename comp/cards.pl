@@ -1,7 +1,7 @@
 #!/usr/bin/perl 
 
 # Created: 西元2015年01月09日 11時38分54秒
-# Last Edit: 2017 Jun 17, 11:47:29 AM
+# Last Edit: 2017 Nov 05, 02:39:14 PM
 # $Id$
 
 =head1 NAME
@@ -18,7 +18,7 @@ our $VERSION = '0.01';
 
 =head1 SYNOPSIS
 
-perl ../cclass/cards.pl --list -t ./$TOPIC && xelatex ./$TOPIC/{jigsaw,quiz}_$STORY_$FORM.tex && evince {jigsaw,quiz}_$STORY_$FORM.pdf
+perl ../cclass/cards.pl --list -t ./$TOPIC -f namequestionsA7 && xelatex ./$TOPIC/{jigsaw,quiz}_$STORY_$FORM.tex && evince {jigsaw,quiz}_$STORY_$FORM.pdf
 
 =cut
 
@@ -33,6 +33,8 @@ has 'help' => (is => 'ro', isa => 'Bool');
 has 'list' => (is => 'ro', isa => 'Bool', cmd_aliases => 'l',);
 has 'topic' => (traits => ['Getopt'], is => 'ro', isa => 'Str',
 		cmd_aliases => 't',);
+has 'format' => (traits => ['Getopt'], is => 'ro', isa => 'Str',
+		cmd_aliases => 'f',);
 
 package main;
 
@@ -51,7 +53,7 @@ my %romanize = (
 
 YAML content is in $COURSE/$TOPIC/cards.yaml files in $STORY/{jigsaw,compcomp}/$FORM/ mappings
 
-The list arg is for latex description list jigsaw cards
+The list arg is for latex description list jigsaw cards. The format arg is for the jigsaw quiz template in methodology/tmpl/tags.
 
 =cut
 
@@ -60,6 +62,7 @@ pod2usage(1) if $script->help;
 pod2usage(-exitstatus => 0, -verbose => 2) if $script->man;
 my $list = ""; $list = "_list" if $script->list;
 my $topic_dir = "./" . $script->topic;
+my $format = $script->format;
 my $cards = LoadFile "$topic_dir/cards.yaml";
 
 for my $t ( keys %$cards ) {
@@ -97,7 +100,7 @@ for my $t ( keys %$cards ) {
 			source =>  "/home/drbean/methodology/tmpl/tags/$tmplfile" ,
 			delimiters => [ '<TMPL>', '</TMPL>' ]);
 		my $quiztmpl = Text::Template->new( type => 'file',
-            source =>  '/home/drbean/methodology/tmpl/namequestionsA6.tmpl' ,
+            source =>  "/home/drbean/methodology/tmpl/tags/$format.tmpl" ,
 			delimiters => [ '<TMPL>', '</TMPL>' ]);
 		my $fio = io "$topic_dir/jigsaw_$t" . "_$f.tex";
 		my $qio = io "$topic_dir/quiz_$t" . "_$f.tex";
