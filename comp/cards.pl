@@ -1,7 +1,7 @@
 #!/usr/bin/perl 
 
 # Created: 西元2015年01月09日 11時38分54秒
-# Last Edit: 2018 May 29, 12:21:52 PM
+# Last Edit: 2018 Nov 24, 04:20:55 PM
 # $Id$
 
 =head1 NAME
@@ -30,7 +30,7 @@ with 'MooseX::Getopt';
 
 has 'man' => (is => 'ro', isa => 'Bool');
 has 'help' => (is => 'ro', isa => 'Bool');
-has 'list' => (is => 'ro', isa => 'Bool', cmd_aliases => 'l',);
+has 'list' => (traits => ['Getopt'], is => 'ro', isa => 'Bool', cmd_aliases => 'l',);
 has 'topic' => (traits => ['Getopt'], is => 'ro', isa => 'Str',
 		cmd_aliases => 't',);
 has 'format' => (traits => ['Getopt'], is => 'ro', isa => 'Str',
@@ -72,10 +72,10 @@ for my $t ( keys %$cards ) {
 	for my $f ( keys %$compcomp ) {
 		my $form = $compcomp->{$f};
                 my $pairtmpl = Text::Template->new( type => 'file',
-                        source =>  '/home/drbean/class/tmpl/compcompA4.tmpl' ,
+                        source =>  '/home/drbean/methodology/tmpl/compcompA4.tmpl' ,
                         delimiters => [ '<TMPL>', '</TMPL>' ]);
 		my $quiztmpl = Text::Template->new( type => 'file',
-			source =>  '/home/drbean/class/tmpl/namequestionsB7.tmpl' ,
+			source =>  '/home/drbean/methodology/tmpl/namequestionsB7.tmpl' ,
 			delimiters => [ '<TMPL>', '</TMPL>' ]);
                 my $cio = io "$topic_dir/compcomp_$t" . "_$f.tex";
 		my $qio = io "$topic_dir/compcomp_quiz_$t" . "_$f.tex";
