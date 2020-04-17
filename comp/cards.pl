@@ -1,7 +1,7 @@
 #!/usr/bin/perl 
 
 # Created: 西元2015年01月09日 11時38分54秒
-# Last Edit: 2020 Mar 31, 01:33:56 PM
+# Last Edit: 2020 Apr 17, 07:45:59 PM
 # $Id$
 
 =head1 NAME
@@ -65,7 +65,7 @@ my $topic_dir = "./" . $script->topic;
 my $format = $script->format;
 my $cards = LoadFile "$topic_dir/cards.yaml";
 
-for my $t ( 'gooigi' ) {
+for my $t ( keys %$cards ) {
 	my $topic = $cards->{$t};
 	next unless ref $topic eq 'HASH';
 	my $compcomp = $topic->{compcomp};
@@ -93,9 +93,12 @@ for my $t ( 'gooigi' ) {
 		$hio->print("<h2>$form->{identifier}</h2><ol>", @htmlq);
 	}
 	my $jigsaw = $topic->{jigsaw};
+	for my $f ( keys %$jigsaw ) {
+		my $form = $jigsaw->{$f};
 		# my $tmplfile = "8_ABC_jigsaw_" . $list . "cards.tmpl";
-		# my $tmplfile = "jigsaw_D" . $list . ".tmpl";
-		my $tmplfile = "4_scenario_12_cards" . $list . ".tmpl";
+		my $tmplfile = "jigsaw_D" . $list . ".tmpl";
+		# my $tmplfile = "jigsaw" . $list . ".tmpl";
+		# my $tmplfile = "4_scenario_12_cards" . $list . ".tmpl";
 		my $fourtmpl = Text::Template->new( type => 'file',
 			source =>  "/home/drbean/methodology/tmpl/tags/$tmplfile" ,
 			delimiters => [ '<TMPL>', '</TMPL>' ])
@@ -104,12 +107,9 @@ for my $t ( 'gooigi' ) {
             source =>  "/home/drbean/methodology/tmpl/tags/$format.tmpl" ,
 			delimiters => [ '<TMPL>', '</TMPL>' ]);
 		my $fio = io "$topic_dir/jigsaw_$t" . "_student.tex";
-		# my $qio = io "$topic_dir/quiz_$t" . "_$f.tex";
-		# my $hio = io "$topic_dir/quiz_${t}_$f.html";
+		my $qio = io "$topic_dir/quiz_$t" . "_$f.tex";
+		my $hio = io "$topic_dir/quiz_${t}_$f.html";
 		my $form;
-	for my $f ( 1..4 ) {
-		$form->{"identifier$f"} = $jigsaw->{$f}->{identifier};
-		$form->{$_ . $f} = $jigsaw->{$f}->{$_} for ('A'..'C');
 		my $n = 1;
 		my $questions = $form->{quiz};
 		for my $qa ( @$questions ) {
@@ -117,16 +117,15 @@ for my $t ( 'gooigi' ) {
 			$n++;
 		}
 		$form->{topic} = $t;
-		# $form->{form} = $romanize{ $f };
+		$form->{form} = $romanize{ $f };
+		my $result = $fourtmpl->fill_in( hash=> $form  ) ;
+		if (defined $result) { $fio->print( $result  )   }
+			else { die "Couldn't fill in template: $Text::Template::ERROR"   }
+		$qio->print( $quiztmpl->fill_in( hash=> $form ) );
+		my @htmlq = map { $form->{"q$_"} } 1 .. $n-1;
+		$,="\n<h1><li>";
+		$hio->print("<h2>$form->{identifier}</h2><ol>", @htmlq);
 	}
-	my $result = $fourtmpl->fill_in( hash=> $form ) ;
-	if (defined $result) { $fio->print( $result )  }
-	           else { die "Couldn't fill in template: $Text::Template::ERROR"  }
-		   # $fio->print();
-		# $qio->print( $quiztmpl->fill_in( hash=> $form ) );
-		# my @htmlq = map { $form->{"q$_"} } 1 .. $n-1;
-		# $,="\n<h1><li>";
-		# $hio->print("<h2>$form->{identifier}</h2><ol>", @htmlq);
 }
 
 =head1 AUTHOR
