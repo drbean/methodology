@@ -1,7 +1,7 @@
 #!/usr/bin/perl 
 
 # Created: 西元2015年01月09日 11時38分54秒
-# Last Edit: 2020 Apr 17, 07:45:59 PM
+# Last Edit: 2020 Apr 17, 07:51:56 PM
 # $Id$
 
 =head1 NAME
@@ -109,7 +109,6 @@ for my $t ( keys %$cards ) {
 		my $fio = io "$topic_dir/jigsaw_$t" . "_student.tex";
 		my $qio = io "$topic_dir/quiz_$t" . "_$f.tex";
 		my $hio = io "$topic_dir/quiz_${t}_$f.html";
-		my $form;
 		my $n = 1;
 		my $questions = $form->{quiz};
 		for my $qa ( @$questions ) {
