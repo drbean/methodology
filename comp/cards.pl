@@ -1,7 +1,7 @@
 #!/usr/bin/perl 
 
 # Created: 西元2015年01月09日 11時38分54秒
-# Last Edit: 2020 Apr 17, 07:51:56 PM
+# Last Edit: 2020 Apr 20, 02:42:09 PM
 # $Id$
 
 =head1 NAME
@@ -95,8 +95,8 @@ for my $t ( keys %$cards ) {
 	my $jigsaw = $topic->{jigsaw};
 	for my $f ( keys %$jigsaw ) {
 		my $form = $jigsaw->{$f};
-		# my $tmplfile = "8_ABC_jigsaw_" . $list . "cards.tmpl";
-		my $tmplfile = "jigsaw_D" . $list . ".tmpl";
+		my $tmplfile = "8_ABC_jigsaw_" . $list . "cards.tmpl";
+		# my $tmplfile = "jigsaw_D" . $list . ".tmpl";
 		# my $tmplfile = "jigsaw" . $list . ".tmpl";
 		# my $tmplfile = "4_scenario_12_cards" . $list . ".tmpl";
 		my $fourtmpl = Text::Template->new( type => 'file',
@@ -106,7 +106,7 @@ for my $t ( keys %$cards ) {
 		my $quiztmpl = Text::Template->new( type => 'file',
             source =>  "/home/drbean/methodology/tmpl/tags/$format.tmpl" ,
 			delimiters => [ '<TMPL>', '</TMPL>' ]);
-		my $fio = io "$topic_dir/jigsaw_$t" . "_student.tex";
+		my $fio = io "$topic_dir/jigsaw_$t" . "_$f.tex";
 		my $qio = io "$topic_dir/quiz_$t" . "_$f.tex";
 		my $hio = io "$topic_dir/quiz_${t}_$f.html";
 		my $n = 1;
