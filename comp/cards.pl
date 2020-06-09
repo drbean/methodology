@@ -1,7 +1,7 @@
 #!/usr/bin/perl 
 
 # Created: 西元2015年01月09日 11時38分54秒
-# Last Edit: 2020 May 04, 03:39:25 PM
+# Last Edit: 2020 Jun 09, 02:30:01 PM
 # $Id$
 
 =head1 NAME
@@ -96,7 +96,7 @@ for my $t ( keys %$cards ) {
 	for my $f ( keys %$jigsaw ) {
 		my $form = $jigsaw->{$f};
 		# my $tmplfile = "8_ABC_jigsaw_" . $list . "cards.tmpl";
-		my $tmplfile = "jigsaw_D" . $list . ".tmpl";
+		my $tmplfile = "jigsaw_D_2" . $list . ".tmpl";
 		# my $tmplfile = "jigsaw" . $list . ".tmpl";
 		# my $tmplfile = "4_scenario_12_cards" . $list . ".tmpl";
 		my $fourtmpl = Text::Template->new( type => 'file',
